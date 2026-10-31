@@ -36,7 +36,7 @@ class MainActivity : Activity() {
  override fun onCreate(savedInstanceState:Bundle?){super.onCreate(savedInstanceState); render()}
  private fun render(){
   window.statusBarColor=navy; window.navigationBarColor=bg; window.decorView.systemUiVisibility=View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
-  val scroll=ScrollView(this).apply { fillViewport=true; setBackgroundColor(bg) }
+   val scroll=ScrollView(this).apply { isFillViewport=true; setBackgroundColor(bg) }
   root=LinearLayout(this).apply { orientation=LinearLayout.VERTICAL; setPadding(dp(17),dp(20),dp(17),dp(28)) }; scroll.addView(root); setContentView(scroll)
   val brand=row(); val logo=ImageView(this).apply { setImageResource(com.example.vivoautoreply.R.drawable.auto_sms_logo); scaleType=ImageView.ScaleType.FIT_CENTER };brand.addView(logo,LinearLayout.LayoutParams(dp(54),dp(54)));val brandTitle=LinearLayout(this).apply{orientation=LinearLayout.VERTICAL;setPadding(dp(10),0,0,0)};brandTitle.addView(text("AUTO SMS",25f,true));brandTitle.addView(text("Smart missed-call replies",12f,false,muted));brand.addView(brandTitle);root.addView(brand);root.addView(space(18))
   val hero=card().apply { background=shape(Color.rgb(232,242,255),22) };hero.addView(text("YOUR SMART RECEPTIONIST",11f,true,blue));hero.addView(space(7));hero.addView(text("Never leave a missed call unanswered.",20f,true));hero.addView(space(5));hero.addView(text("Automatic SMS from your selected SIM, following your saved schedules.",13f,false,muted));addCard(hero)
